@@ -8,9 +8,15 @@ import plotly.express as px
 import base64
 from io import BytesIO
 import matplotlib
+import sys
+
+# Ensure the templates directory is in the path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 matplotlib.use('Agg')  # Use non-interactive backend
 
-app = Flask(__name__)
+app = Flask(__name__, 
+            template_folder=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates'))
 app.secret_key = 'world_population_analysis_secret_key'
 
 class WorldPopulationAnalysis:
@@ -125,7 +131,7 @@ class WorldPopulationAnalysis:
 @app.route('/')
 def index():
     # Check if the file exists
-    file_path = 'world_population.xlsx'
+    file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'world_population.xlsx')
     if not os.path.exists(file_path):
         flash(f'Error: The file {file_path} was not found. Please make sure it exists in the project directory.')
         return render_template('index.html')
@@ -140,4 +146,6 @@ def index():
     return render_template('results.html', results=results)
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    # Use production settings when deployed, development settings locally
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port, debug=False) 

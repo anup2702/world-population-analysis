@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Population Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1><i class="fas fa-globe-americas me-2"></i>World Population Analysis</h1>
+                <p class="mb-0">Comprehensive analysis of global population data</p>
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-tabs" id="analysisTabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="distribution-tab" data-bs-toggle="tab" href="#distribution" role="tab">
+                            <i class="fas fa-chart-bar me-2"></i>Population Distribution
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="density-tab" data-bs-toggle="tab" href="#density" role="tab">
+                            <i class="fas fa-users me-2"></i>Population Density
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="growth-tab" data-bs-toggle="tab" href="#growth" role="tab">
+                            <i class="fas fa-chart-line me-2"></i>Growth Rate
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="maps-tab" data-bs-toggle="tab" href="#maps" role="tab">
+                            <i class="fas fa-map me-2"></i>Interactive Maps
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="summary-tab" data-bs-toggle="tab" href="#summary" role="tab">
+                            <i class="fas fa-table me-2"></i>Summary Statistics
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="analysisTabContent">
+                    <div class="tab-pane fade show active" id="distribution" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="visualization-container">
+                                    <h3 class="visualization-title">Top 10 Most Populated Countries</h3>
+                                    <img src="images/top_10.png" class="img-fluid" alt="Top 10 Countries">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="visualization-container">
+                                    <h3 class="visualization-title">10 Least Populated Countries</h3>
+                                    <img src="images/bottom_10.png" class="img-fluid" alt="Bottom 10 Countries">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="density" role="tabpanel">
+                        <div class="visualization-container">
+                            <h3 class="visualization-title">Top 10 Countries by Population Density</h3>
+                            <img src="images/density.png" class="img-fluid" alt="Population Density">
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="growth" role="tabpanel">
+                        <div class="visualization-container">
+                            <h3 class="visualization-title">Top 10 Countries by Population Growth Rate</h3>
+                            <img src="images/growth.png" class="img-fluid" alt="Growth Rate">
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="maps" role="tabpanel">
+                        <div class="visualization-container">
+                            <h3 class="visualization-title">World Population Distribution</h3>
+                            <div class="map-container">
+                                <iframe src="maps/population_map.html" width="100%" height="500px" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div class="visualization-container">
+                            <h3 class="visualization-title">World Population Growth Rate</h3>
+                            <div class="map-container">
+                                <iframe src="maps/growth_map.html" width="100%" height="500px" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="summary" role="tabpanel">
+                        <div class="visualization-container">
+                            <h3 class="visualization-title">Summary Statistics</h3>
+                            <div class="table-responsive">
+                                <table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Rank</th>
+      <th>Population</th>
+      <th>2020 Population</th>
+      <th>2015 Population</th>
+      <th>2010 Population</th>
+      <th>2000 Population</th>
+      <th>1990 Population</th>
+      <th>1980 Population</th>
+      <th>1970 Population</th>
+      <th>Area (km²)</th>
+      <th>Density</th>
+      <th>Growth Rate</th>
+      <th>World Population Percentage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>234.000000</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>2.340000e+02</td>
+      <td>234.000000</td>
+      <td>234.000000</td>
+      <td>234.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>117.500000</td>
+      <td>3.407441e+07</td>
+      <td>3.350107e+07</td>
+      <td>3.172996e+07</td>
+      <td>2.984524e+07</td>
+      <td>2.626947e+07</td>
+      <td>2.271022e+07</td>
+      <td>1.898462e+07</td>
+      <td>1.578691e+07</td>
+      <td>5.814494e+05</td>
+      <td>452.127044</td>
+      <td>1.009577</td>
+      <td>0.427051</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>67.694165</td>
+      <td>1.367664e+08</td>
+      <td>1.355899e+08</td>
+      <td>1.304050e+08</td>
+      <td>1.242185e+08</td>
+      <td>1.116982e+08</td>
+      <td>9.783217e+07</td>
+      <td>8.178519e+07</td>
+      <td>6.779509e+07</td>
+      <td>1.761841e+06</td>
+      <td>2066.121904</td>
+      <td>0.013385</td>
+      <td>1.714977</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>1.000000</td>
+      <td>5.100000e+02</td>
+      <td>5.200000e+02</td>
+      <td>5.640000e+02</td>
+      <td>5.960000e+02</td>
+      <td>6.510000e+02</td>
+      <td>7.000000e+02</td>
+      <td>7.330000e+02</td>
+      <td>7.520000e+02</td>
+      <td>1.000000e+00</td>
+      <td>0.026100</td>
+      <td>0.912000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>59.250000</td>
+      <td>4.197385e+05</td>
+      <td>4.152845e+05</td>
+      <td>4.046760e+05</td>
+      <td>3.931490e+05</td>
+      <td>3.272420e+05</td>
+      <td>2.641158e+05</td>
+      <td>2.296142e+05</td>
+      <td>1.559970e+05</td>
+      <td>2.650000e+03</td>
+      <td>38.417875</td>
+      <td>1.001775</td>
+      <td>0.010000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>117.500000</td>
+      <td>5.559944e+06</td>
+      <td>5.493074e+06</td>
+      <td>5.307400e+06</td>
+      <td>4.942770e+06</td>
+      <td>4.292907e+06</td>
+      <td>3.825410e+06</td>
+      <td>3.141146e+06</td>
+      <td>2.604830e+06</td>
+      <td>8.119950e+04</td>
+      <td>95.346750</td>
+      <td>1.007900</td>
+      <td>0.070000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>175.750000</td>
+      <td>2.247650e+07</td>
+      <td>2.144798e+07</td>
+      <td>1.973085e+07</td>
+      <td>1.915957e+07</td>
+      <td>1.576230e+07</td>
+      <td>1.186923e+07</td>
+      <td>9.826054e+06</td>
+      <td>8.817329e+06</td>
+      <td>4.304258e+05</td>
+      <td>238.933250</td>
+      <td>1.016950</td>
+      <td>0.280000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>234.000000</td>
+      <td>1.425887e+09</td>
+      <td>1.424930e+09</td>
+      <td>1.393715e+09</td>
+      <td>1.348191e+09</td>
+      <td>1.264099e+09</td>
+      <td>1.153704e+09</td>
+      <td>9.823725e+08</td>
+      <td>8.225344e+08</td>
+      <td>1.709824e+07</td>
+      <td>23172.266700</td>
+      <td>1.069100</td>
+      <td>17.880000</td>
+    </tr>
+  </tbody>
+</table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
